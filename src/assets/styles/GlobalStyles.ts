@@ -9,10 +9,36 @@ export const GlobalStyles = createGlobalStyle`
 
   :root{
     --primary-beige: #FAFAFA;
+    --primary-blue: #2F80ED;
+    --primary-orange: #F2994A;
   }
 
   html {
     font-size: 16px;
+
+    @media (max-width: 1234px) {
+      font-size: 82.5%;
+    }
+
+    @media (max-width: 1024px) {
+      font-size: 75%;
+    }
+
+    @media (max-width: 840px) {
+      font-size: 70%;
+    }
+
+    @media (max-width: 680px) {
+      font-size: 65%;
+    }
+
+    @media (max-width: 565px) {
+      font-size: 60%;
+    }
+
+    @media (max-width: 405px) {
+      font-size: 55%;
+    }
   }
 
   body, button, input, textarea {

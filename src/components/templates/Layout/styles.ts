@@ -7,7 +7,7 @@ export const Container = styled.div`
   .layout__main{
     width: 100%;
     height: fit-content;
-    min-height: calc(100vh - 10rem);
+    min-height: calc(100vh + -6rem);
 
     background-color: var(--primary-beige);
   }
