@@ -1,12 +1,14 @@
+import { Header } from '../../organisms/Header';
+import { Router } from '../../../routes';
+import { Container } from './styles';
+
 export default function Layout() {
   return (
-    <div>
-      <header>
-        header
-      </header>
-      <main>
-        main
+    <Container>
+      <Header />
+      <main className="layout__main">
+        <Router />
       </main>
-    </div>
+    </Container>
   );
 }
