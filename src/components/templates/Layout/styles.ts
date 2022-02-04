@@ -9,6 +9,8 @@ export const Container = styled.div`
     height: fit-content;
     min-height: calc(100vh + -6rem);
 
+    position: relative;
+
     background-color: var(--primary-beige);
   }
 `;

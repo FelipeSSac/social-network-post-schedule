@@ -9,6 +9,8 @@ export const GlobalStyles = createGlobalStyle`
 
   :root{
     --primary-beige: #FAFAFA;
+    --primary-gray: #E0E0E0;
+    --primary-dark: #333333;
     --primary-blue: #2F80ED;
     --primary-orange: #F2994A;
   }
