@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Container = styled.nav`
+export const Container = styled.footer`
   width: 100%;
   height: 4.1875rem;
 
@@ -11,7 +11,7 @@ export const Container = styled.nav`
 
   background-color: #fff;
 
-  .add-schedule-nav__wrapper{
+  .add-schedule-footer__nav{
     width: 95%;
     max-width: 1354px;
     height: 100%;

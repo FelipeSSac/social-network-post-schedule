@@ -8,15 +8,37 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   :root{
-    --primary-beige: #FAFAFA;
-    --primary-gray: #E0E0E0;
-    --primary-dark: #333333;
     --primary-blue: #2F80ED;
     --primary-orange: #F2994A;
+    --primary-beige: #FAFAFA;
+    --primary-gray: #E0E0E0;
+    --secondary-gray: #949494;
+    --tertiary-gray: #828282;
+    --primary-dark: #333333;
   }
 
   html {
+    overflow-y: auto;
+    overflow-x: hidden;
+
     font-size: 16px;
+
+    &::-webkit-scrollbar {
+      width: 8px;
+      border-radius: 0.2rem;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: var(--secondary-gray);
+
+      &:hover {
+        background-color: var(--primary-dark);
+      }
+    }
 
     @media (max-width: 1234px) {
       font-size: 82.5%;
@@ -45,5 +67,30 @@ export const GlobalStyles = createGlobalStyle`
 
   body, button, input, textarea {
     font-family: 'Poppins', sans-serif;
+
+    color: var(--primary-dark);
+
+    &::placeholder {
+      color: var(--tertiary-gray);
+    }
+  }
+
+  textarea {
+    &::-webkit-scrollbar {
+      width: 8px;
+      border-radius: 0.2rem;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: var(--secondary-gray);
+
+      &:hover {
+        background-color: var(--primary-dark);
+      }
+    }
   }
 `;

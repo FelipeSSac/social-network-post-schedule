@@ -5,7 +5,7 @@ import { Container } from './styles';
 export default function AddScheduleNav() {
   return (
     <Container>
-      <div className="add-schedule-nav__wrapper">
+      <nav className="add-schedule-footer__nav">
         <Button
           type="button"
           textColor="var(--primary-blue)"
@@ -25,7 +25,7 @@ export default function AddScheduleNav() {
         >
           Agendar
         </Button>
-      </div>
+      </nav>
     </Container>
   );
 }
