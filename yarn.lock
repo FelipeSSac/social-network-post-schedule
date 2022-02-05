@@ -1012,6 +1012,11 @@ electron-to-chromium@^1.4.17:
   resolved "https://registry.npmjs.org/electron-to-chromium/-/electron-to-chromium-1.4.62.tgz"
   integrity sha512-fWc/zAThqZzl7fbuLzar+x6bqZBWHrsBXQOqv//yrgdTLY/G3JGTPOWhPKIhbhynJJhqE9QNzKzlpCINUmUMoA==
 
+emoji-picker-react@^3.5.0:
+  version "3.5.0"
+  resolved "https://registry.yarnpkg.com/emoji-picker-react/-/emoji-picker-react-3.5.0.tgz#664aa230382040b73ef6be6a59e440c422a44bdf"
+  integrity sha512-e577mJVySM/4HIHwQIUGo6EipCoEouF7+a0YEqFhmzg0Yy1GrafmIhc/llG/No5gGodTM9qAT7hMSGCZFDT1Zw==
+
 emoji-regex@^9.2.2:
   version "9.2.2"
   resolved "https://registry.npmjs.org/emoji-regex/-/emoji-regex-9.2.2.tgz"

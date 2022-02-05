@@ -1,6 +1,7 @@
 import { SocialNetworkButton } from '../../atoms/SocialNetworkButton';
 import { Card } from '../../molecules/Card';
 import { ImageUpload } from '../../molecules/ImageUpload';
+import { PostText } from '../../molecules/PostText';
 import { AddScheduleFooter } from '../AddScheduleFooter';
 import { PostPreview } from '../PostPreview';
 
@@ -57,10 +58,7 @@ export default function NewScheduleForm() {
             title="Texto do post"
             className="new-schedule-form__post-text"
           >
-            <textarea
-              className="new-schedule-form__post-text__textarea"
-              placeholder="Aqui vai o texto descritivo desse post"
-            />
+            <PostText />
           </Card>
           <Card
             title="Upload de imagem"

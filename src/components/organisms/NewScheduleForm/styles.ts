@@ -103,17 +103,4 @@ export const Container = styled.form`
       background: url(${ClockIcon}) no-repeat;
     }
   }
-
-  .new-schedule-form__post-text__textarea{
-    width: 100%;
-    height: 9.125rem;
-    padding: 0.5rem 0.8rem;
-
-    border: 1px solid var(--secondary-gray);
-    border-radius: 0.2rem;
-    outline: 0;
-    resize: none;
-
-    font-size: 0.875rem;
-  }
 `;
