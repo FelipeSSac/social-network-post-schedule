@@ -67,7 +67,7 @@ export const GlobalStyles = createGlobalStyle`
 
   body, button, input, textarea {
     font-family: 'Poppins', sans-serif;
-
+    -webkit-font-smoothing: antialiased;
     color: var(--primary-dark);
 
     &::placeholder {
@@ -91,6 +91,24 @@ export const GlobalStyles = createGlobalStyle`
       &:hover {
         background-color: var(--primary-dark);
       }
+    }
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fade-out {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
     }
   }
 `;
