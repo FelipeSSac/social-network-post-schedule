@@ -6,12 +6,12 @@ import { ISocialNetworkButtonProps } from './interfaces/ISocialNetworkButtonProp
 import { Container } from './styles';
 
 export default function SocialNetworkButton({
-  socialNetwork, ...rest
+  socialNetwork, selected, ...rest
 }: ISocialNetworkButtonProps) {
   const { icon, label } = ButtonTypes[socialNetwork];
 
   return (
-    <Container type="button" {...rest}>
+    <Container type="button" selected={selected} {...rest}>
       {cloneElement(icon, {
         alt: label,
         className: 'social-network-button__icon'

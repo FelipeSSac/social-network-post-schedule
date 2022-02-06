@@ -1,27 +1,27 @@
 import { ReactElement } from 'react';
 
 export interface IButtonTypes {
-  instagram: {
+  Instagram: {
     label: string;
     icon: ReactElement;
   };
-  linkedin: {
+  Linkedin: {
     label: string;
     icon: ReactElement;
   };
-  youtube: {
+  Youtube: {
     label: string;
     icon: ReactElement;
   };
-  pinterest: {
+  Pinterest: {
     label: string;
     icon: ReactElement;
   };
-  twitter: {
+  Twitter: {
     label: string;
     icon: ReactElement;
   };
-  facebook: {
+  Facebook: {
     label: string;
     icon: ReactElement;
   };

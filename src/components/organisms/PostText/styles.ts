@@ -7,9 +7,24 @@ export const Container = styled.div`
   position: relative;
 
   .post-text__picker-button{
+    width: 1.2rem;
+    height: 1.2rem;
+
     position: absolute;
     top: 0.8rem;
     right: 1rem;
+
+    border: 0;
+    outline: none;
+    background-color: transparent;
+    cursor: pointer;
+  }
+
+  .post-text__picker-button__image{
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
   }
 
   .post-text__textarea{

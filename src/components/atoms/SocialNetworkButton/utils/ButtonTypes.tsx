@@ -14,27 +14,27 @@ import Facebook from '../../../../assets/images/socialNetwork/sn-facebook.svg?co
 import { IButtonTypes } from '../interfaces/IButtonTypes';
 
 export const ButtonTypes: IButtonTypes = {
-  instagram: {
+  Instagram: {
     label: 'Instagram',
     icon: <Instagram />,
   },
-  linkedin: {
+  Linkedin: {
     label: 'Linked In',
     icon: <LinkedIn />,
   },
-  youtube: {
+  Youtube: {
     label: 'Youtube',
     icon: <Youtube />,
   },
-  pinterest: {
+  Pinterest: {
     label: 'Pinterest',
     icon: <Pinterest />,
   },
-  twitter: {
+  Twitter: {
     label: 'Twitter',
     icon: <Twitter />,
   },
-  facebook: {
+  Facebook: {
     label: 'Facebook',
     icon: <Facebook />,
   },

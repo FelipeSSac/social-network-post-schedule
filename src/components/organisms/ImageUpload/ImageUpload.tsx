@@ -1,14 +1,17 @@
 import {
-  ChangeEvent, DragEvent, useRef, useState
+  ChangeEvent, DragEvent, useEffect, useRef, useState
 } from 'react';
 
 import { Button } from '../../atoms/Button';
 
 import CloudIcon from '../../../assets/images/imageUpload/iu-cloud.svg';
 
+import { IImageUploadProps } from './interfaces/IImageUploadProps';
 import { Container } from './styles';
 
-export default function ImageUpload() {
+export default function ImageUpload({
+  setFormData,
+}: IImageUploadProps) {
   const fileInput = useRef<HTMLInputElement>(null);
 
   const [currentImage, setCurrentImage] = useState<File | undefined>();
@@ -48,6 +51,28 @@ export default function ImageUpload() {
   const onDragOver = preventDefaultFunction;
   const onDragEnter = preventDefaultFunction;
   const onDragLeave = preventDefaultFunction;
+
+  const onImageUpload = () => {
+    if (currentImage) {
+      setFormData((prevState) => ({
+        ...prevState,
+        media: currentImage,
+        mediaUrl: URL.createObjectURL(currentImage)
+      }));
+
+      return;
+    }
+
+    setFormData((prevState) => ({
+      ...prevState,
+      media: undefined,
+      mediaUrl: undefined
+    }));
+  };
+
+  useEffect(() => {
+    onImageUpload();
+  }, [currentImage]);
 
   return (
     <Container

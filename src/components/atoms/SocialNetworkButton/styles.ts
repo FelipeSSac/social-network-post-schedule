@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
-export const Container = styled.button`
+import { IStyleProps } from './interfaces/IStyleProps';
+
+export const Container = styled.button<IStyleProps>`
   width: 2.0625rem;
   height: 2.0625rem;
 
@@ -37,6 +39,15 @@ export const Container = styled.button`
       fill: #EF9F2E;
     }
   }
+
+  ${({ selected }) => selected && (`
+    background: linear-gradient(135deg, #EF9F2E 25%, #E02B4B 105.56%);
+    border: 1px solid #EF9F2E;
+
+    .social-network-button__icon .svg-fill{
+      fill: #FFF;
+    }
+  `)}
 
   &:not(:disabled):active{
     background: linear-gradient(135deg, #EF9F2E 25%, #E02B4B 105.56%);

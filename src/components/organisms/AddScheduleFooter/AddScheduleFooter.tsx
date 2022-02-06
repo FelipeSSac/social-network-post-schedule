@@ -1,8 +1,35 @@
+import { useEffect, useState } from 'react';
+
 import { Button } from '../../atoms/Button';
 
+import { IAddScheduleNavProps } from './interfaces/IAddScheduleNavProps';
 import { Container } from './styles';
 
-export default function AddScheduleNav() {
+export default function AddScheduleNav({
+  formData
+}: IAddScheduleNavProps) {
+  const [disableSubmit, setDisableSubmit] = useState(true);
+
+  const handleEnableSubmit = () => {
+    if (!!formData?.publication_day
+      && !!formData?.publication_time
+      && formData?.social_network_key?.length > 0
+      && disableSubmit
+    ) {
+      setDisableSubmit(false);
+
+      return;
+    }
+
+    if (!disableSubmit) {
+      setDisableSubmit(true);
+    }
+  };
+
+  useEffect(() => {
+    handleEnableSubmit();
+  }, [formData]);
+
   return (
     <Container>
       <nav className="add-schedule-footer__nav">
@@ -21,7 +48,8 @@ export default function AddScheduleNav() {
           Salvar rascunho
         </Button>
         <Button
-          type="button"
+          type="submit"
+          disabled={disableSubmit}
         >
           Agendar
         </Button>

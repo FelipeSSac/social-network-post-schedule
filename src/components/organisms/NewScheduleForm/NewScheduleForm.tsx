@@ -1,80 +1,52 @@
-import { SocialNetworkButton } from '../../atoms/SocialNetworkButton';
 import { Card } from '../../molecules/Card';
-import { ImageUpload } from '../../molecules/ImageUpload';
-import { PostText } from '../../molecules/PostText';
-import { AddScheduleFooter } from '../AddScheduleFooter';
+import { PostSocialNetwork } from '../PostSocialNetwork';
+import { PostDate } from '../PostDate';
+import { PostText } from '../PostText';
+import { ImageUpload } from '../ImageUpload';
 import { PostPreview } from '../PostPreview';
+import { AddScheduleFooter } from '../AddScheduleFooter';
 
+import { INewScheduleFormProps } from './interfaces/INewScheduleFormProps';
 import { Container } from './styles';
 
-export default function NewScheduleForm() {
+export default function NewScheduleForm({
+  formData, setFormData, onSubmit
+}:INewScheduleFormProps) {
   return (
-    <Container>
+    <Container onSubmit={onSubmit}>
       <div className="new-schedule-form__wrapper">
         <aside className="new-schedule-form__aside">
           <div className="new-schedule-form__aside__container">
             <Card title="Redes sociais">
-              <div
-                className="new-schedule-form__post-social-media__container"
-              >
-                <SocialNetworkButton
-                  socialNetwork="instagram"
-                />
-                <SocialNetworkButton
-                  socialNetwork="linkedin"
-                />
-                <SocialNetworkButton
-                  socialNetwork="youtube"
-                  disabled
-                />
-                <SocialNetworkButton
-                  socialNetwork="pinterest"
-                  disabled
-                />
-                <SocialNetworkButton
-                  socialNetwork="twitter"
-                  disabled
-                />
-                <SocialNetworkButton
-                  socialNetwork="facebook"
-                  disabled
-                />
-              </div>
+              <PostSocialNetwork setFormData={setFormData} />
             </Card>
             <Card title="Data de publicação">
-              <div className="new-schedule-form__post-date__container">
-                <input
-                  type="date"
-                  className="new-schedule-form__post-date__date"
-                />
-                <input
-                  type="time"
-                  className="new-schedule-form__post-date__time"
-                />
-              </div>
+              <PostDate setFormData={setFormData} />
             </Card>
           </div>
           <Card
             title="Texto do post"
             className="new-schedule-form__post-text"
           >
-            <PostText />
+            <PostText setFormData={setFormData} />
           </Card>
           <Card
             title="Upload de imagem"
             className="new-schedule-form__image-upload"
           >
-            <ImageUpload />
+            <ImageUpload setFormData={setFormData} />
           </Card>
         </aside>
         <Card
           title="Visualização do post"
           className="new-schedule-form__post-preview"
         >
-          <PostPreview />
+          <PostPreview formData={formData} />
         </Card>
       </div>
-      <AddScheduleFooter />
+      <AddScheduleFooter
+        formData={formData}
+      />
     </Container>
   );
 }

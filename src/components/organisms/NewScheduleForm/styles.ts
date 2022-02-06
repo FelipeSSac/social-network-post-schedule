@@ -1,8 +1,5 @@
 import styled from 'styled-components';
 
-import CalendarIcon from '../../../assets/images/date/date-calendar.svg';
-import ClockIcon from '../../../assets/images/date/date-clock.svg';
-
 export const Container = styled.form`
   width: 100%;
   height: fit-content;
@@ -17,6 +14,10 @@ export const Container = styled.form`
     display: flex;
     justify-content: space-between;
     gap: 2.5rem;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
   }
 
   .new-schedule-form__aside{
@@ -28,7 +29,11 @@ export const Container = styled.form`
     height: fit-content;
 
     display: flex;
-    gap: 2.5rem
+    gap: 2.5rem;
+
+    @media (max-width: 508px) {
+      flex-direction: column;
+    }
   }
 
   .new-schedule-form__post-text,
@@ -39,68 +44,5 @@ export const Container = styled.form`
   .new-schedule-form__post-preview{
     max-width: 649px;
     flex: 1;
-  }
-
-  .new-schedule-form__post-social-media__container{
-    width: 100%;
-    height: fit-content;
-
-    display: flex;
-    justify-content: space-between;
-    gap: 1rem
-  }
-
-  .new-schedule-form__post-date__container{
-    width: 100%;
-    height: fit-content;
-
-    display: flex;
-    justify-content: space-between;
-    gap: 1rem
-  }
-
-  .new-schedule-form__post-date__time,
-  .new-schedule-form__post-date__date{
-    height: 2.625rem;
-
-    position: relative;
-
-    border: 1px solid var(--secondary-gray);
-    border-radius: 0.2rem;
-    outline: 0;
-
-    font-size: 0.8rem;
-  }
-
-  .new-schedule-form__post-date__date{
-    flex: 3;
-    padding: 0 0 0 2rem;
-
-    &::-webkit-calendar-picker-indicator {
-      width: 0.75rem;
-      height: 0.818125rem;
-
-      position: absolute;
-      top: calc(50% + -0.4090625rem);
-      left: -0.9rem;
-
-      background: url(${CalendarIcon}) no-repeat;
-    }
-  }
-
-  .new-schedule-form__post-date__time{
-    flex: 2;
-    padding: 0 0 0 2.2rem;
-
-    &::-webkit-calendar-picker-indicator {
-      width: 0.726875rem;
-      height: 0.7925rem;
-
-      position: absolute;
-      top: calc(50% + -0.39625rem);
-      left: 0.1rem;
-
-      background: url(${ClockIcon}) no-repeat;
-    }
   }
 `;
