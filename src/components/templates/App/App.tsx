@@ -1,6 +1,6 @@
 import { StrictMode } from 'react';
 import { BrowserRouter } from 'react-router-dom';
-import { ToastContainer } from 'react-toastify';
+import { Toaster } from 'react-hot-toast';
 
 import { PostProvider } from '../../../contexts/Post';
 import { Layout } from '../Layout';
@@ -12,10 +12,10 @@ export default function App() {
     <StrictMode>
       <PostProvider>
         <BrowserRouter>
+          <GlobalStyles />
+          <Toaster />
           <Layout />
         </BrowserRouter>
-        <GlobalStyles />
-        <ToastContainer />
       </PostProvider>
     </StrictMode>
   );

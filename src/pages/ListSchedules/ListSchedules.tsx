@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { toast } from 'react-toastify';
+import { toast } from 'react-hot-toast';
 import axios from 'axios';
 import usePost from '../../hooks/usePost';
 
@@ -12,15 +12,12 @@ export default function ListSchedules() {
 
   const [schedules, setSchedules] = useState([] as IScheduleData[]);
 
-  console.log(schedules);
-
   const ensureSchedules = async () => {
     try {
       const response = await axios.get('../db/schedules.json');
       const data = response?.data?.data || [];
 
-      setSchedules((prevState) => ([
-        ...prevState,
+      setSchedules(([
         ...schedulePost,
         ...data
       ]));
@@ -38,7 +35,7 @@ export default function ListSchedules() {
       <h1 className="list-schedules__title">
         Listagem de agendamento
       </h1>
-      <SchedulesTable />
+      <SchedulesTable schedules={schedules} />
     </Container>
   );
 }

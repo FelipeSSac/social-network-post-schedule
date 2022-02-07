@@ -7,7 +7,7 @@ import Comment from '../../../assets/images/postPreview/pp-comment-in.svg?compon
 // @ts-expect-error
 import Share from '../../../assets/images/postPreview/pp-share-in.svg?component';
 
-import { getPtBrDate } from '../../../utils/getPtBrDate';
+import { ensurePtBrDate } from '../../../utils/ensurePtBrDate';
 
 import { ILinkedinPreviewProps } from './interfaces/ILinkedinPreviewProps';
 import { Container } from './styles';
@@ -27,7 +27,7 @@ export default function LinkedinPreview({
           </h1>
           <h2 className="linkedin-preview__header__date">
             {formData?.publication_day
-              && getPtBrDate(formData?.publication_day)}
+              && ensurePtBrDate(formData?.publication_day)}
           </h2>
         </div>
       </div>

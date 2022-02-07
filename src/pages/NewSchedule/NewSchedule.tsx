@@ -24,7 +24,6 @@ export default function NewSchedule() {
     text: '',
     media: undefined,
     mediaUrl: undefined,
-    status: '',
   } as IScheduleFormData);
 
   const callback = () => {
@@ -38,10 +37,10 @@ export default function NewSchedule() {
       id: uuid(),
       social_network_key: scheduleFormData.social_network_key,
       publication_date:
-      `${scheduleFormData.publication_date}T${scheduleFormData.publication_time}`,
+      `${scheduleFormData.publication_day}T${scheduleFormData.publication_time}`,
       text: scheduleFormData.text,
       media: scheduleFormData.mediaUrl,
-      status_key: '1',
+      status_key: 1,
     });
 
     setShowModal(true);

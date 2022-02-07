@@ -52,4 +52,53 @@ export const Container = styled.table`
       background-color: #F2F2F2;
     }
   }
+
+  .schedules-table__social-network{
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .schedules-table__image{
+    width: 100%;
+    max-width: 3.125rem;
+    height: auto;
+    max-height: 3.125rem;
+    aspect-ratio: 1;
+    margin: 0 auto;
+
+    display: block;
+
+    object-fit: cover;
+  }
+
+  .schedules-table__text,
+  .schedules-table__date{
+    font-size: 0.875rem;
+
+    white-space: wrap;
+    word-wrap: break-word;
+  }
+
+  .schedules-table__date{
+    text-align: center;
+  }
+
+  .schedules-table__preview-button{
+    width: fit-content;
+    height: fit-content;
+
+    display: inline;
+
+    border: 0;
+    outline: none;
+    background-color: transparent;
+    cursor: pointer;
+
+    color: var(--primary-blue);
+    font-size: 0.875rem;
+    text-decoration: underline;
+    text-align: center;
+  }
 `;

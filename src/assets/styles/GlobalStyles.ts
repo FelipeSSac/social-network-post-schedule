@@ -63,6 +63,10 @@ export const GlobalStyles = createGlobalStyle`
     @media (max-width: 405px) {
       font-size: 55%;
     }
+
+    @media (max-width: 355px) {
+      font-size: 52%;
+    }
   }
 
   body, button, input, textarea {

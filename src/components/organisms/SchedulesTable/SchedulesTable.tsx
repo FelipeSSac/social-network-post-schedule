@@ -1,6 +1,66 @@
-import { Container } from './styles';
+import axios from 'axios';
+import {
+  useEffect, useState
+} from 'react';
+import { toast } from 'react-hot-toast';
 
-export default function SchedulesTable() {
+import { SocialNetworkIcon } from '../../atoms/SocialNetworkIcon';
+import { StatusLabel } from '../../atoms/StatusLabel';
+
+import { ensureDateTimePtBr } from '../../../utils/ensureDateTimePtBr';
+
+import { ISchedulesTableProps } from './interfaces/ISchedulesTableProps';
+import { IStatusData } from './interfaces/IStatusData';
+import { ISocialNetwork } from '../PostSocialNetwork/interfaces/ISocialNetwork';
+import { Container } from './styles';
+import { IIconTypesKeys } from '../../atoms/SocialNetworkIcon/interfaces/IIconTypes';
+
+export default function SchedulesTable({
+  schedules
+}: ISchedulesTableProps) {
+  const [statusData, setStatusData] = useState([
+  ] as IStatusData[]);
+
+  const [socialNetworkConfig, setSocialNetworkConfig] = useState([] as ISocialNetwork[]);
+  const [statusConfig, setStatusConfig] = useState([] as IStatusData[]);
+
+  const ensureStatus = async () => {
+    try {
+      const response = await axios.get('../db/schedules-status.json');
+      const data = response?.data?.data || [];
+
+      setStatusConfig(data);
+
+      const findStatus = schedules.map(({ status_key }) => {
+        const status = data.find((item: IStatusData) => item.id === status_key);
+
+        return status;
+      });
+
+      setStatusData((
+        schedules.map((item, index) => (findStatus[index] as IStatusData))
+      ));
+    } catch (error: any) {
+      toast.error(error?.response?.data?.message || 'Opps ocorreu um erro ao acessar os dados!');
+    }
+  };
+
+  const ensureSocialNetwork = async () => {
+    try {
+      const response = await axios.get('../db/social-networks.json');
+      const data = response?.data?.data || [];
+
+      setSocialNetworkConfig(data);
+    } catch (error: any) {
+      toast.error(error?.response?.data?.message || 'Opps ocorreu um erro ao acessar os dados!');
+    }
+  };
+
+  useEffect(() => {
+    ensureStatus();
+    ensureSocialNetwork();
+  }, [schedules]);
+
   return (
     <Container>
       <thead className="schedules-table__thead">
@@ -14,46 +74,52 @@ export default function SchedulesTable() {
         </tr>
       </thead>
       <tbody className="schedules-table__tbody">
-        <tr className="schedules-table__tr">
-          <td className="schedules-table__td">1</td>
-          <td className="schedules-table__td">cell2_1</td>
-          <td className="schedules-table__td">cell3_1</td>
-          <td className="schedules-table__td">cell4_1</td>
-          <td className="schedules-table__td">cell5_1</td>
-          <td className="schedules-table__td">cell6_1</td>
+        {schedules?.length > 0 && schedules.map((schedule, index) => (
+        <tr className="schedules-table__tr" key={schedule.id}>
+          <td className="schedules-table__td">
+            <div className="schedules-table__social-network">
+            {socialNetworkConfig?.length > 0 && schedule?.social_network_key?.map((key) => {
+              const socialNetwork = socialNetworkConfig.find((item) => item.id === key);
+
+              return (
+                <SocialNetworkIcon
+                  key={key}
+                  socialNetwork={socialNetwork?.name as IIconTypesKeys}
+                />
+              );
+            })}
+            </div>
+          </td>
+          <td className="schedules-table__td">
+            <img
+              src={schedule?.media}
+              alt="Post preview"
+              className="schedules-table__image"
+            />
+          </td>
+          <td className="schedules-table__td">
+            <p className="schedules-table__text">
+              {schedule.text}
+            </p>
+          </td>
+          <td className="schedules-table__td">
+            <p className="schedules-table__date">
+              {schedule.publication_date
+                && ensureDateTimePtBr(schedule.publication_date)}
+            </p>
+          </td>
+          <td className="schedules-table__td">
+            <button type="button" className="schedules-table__preview-button">
+              Preview
+            </button>
+          </td>
+          <td className="schedules-table__td">
+            {(statusConfig.length > 0) && (
+              <StatusLabel status={statusData[index]} />
+            )}
+          </td>
         </tr>
-        <tr className="schedules-table__tr">
-          <td className="schedules-table__td">1</td>
-          <td className="schedules-table__td">cell2_2</td>
-          <td className="schedules-table__td">cell3_2</td>
-          <td className="schedules-table__td">cell4_2</td>
-          <td className="schedules-table__td">cell5_2</td>
-          <td className="schedules-table__td">cell6_2</td>
-        </tr>
-        <tr className="schedules-table__tr">
-          <td className="schedules-table__td">1</td>
-          <td className="schedules-table__td">cell2_3</td>
-          <td className="schedules-table__td">cell3_3</td>
-          <td className="schedules-table__td">cell4_3</td>
-          <td className="schedules-table__td">cell5_3</td>
-          <td className="schedules-table__td">cell6_3</td>
-        </tr>
-        <tr className="schedules-table__tr">
-          <td className="schedules-table__td">1</td>
-          <td className="schedules-table__td">cell2_4</td>
-          <td className="schedules-table__td">cell3_4</td>
-          <td className="schedules-table__td">cell4_4</td>
-          <td className="schedules-table__td">cell5_4</td>
-          <td className="schedules-table__td">cell6_4</td>
-        </tr>
-        <tr className="schedules-table__tr">
-          <td className="schedules-table__td">1</td>
-          <td className="schedules-table__td">cell2_5</td>
-          <td className="schedules-table__td">cell3_5</td>
-          <td className="schedules-table__td">cell4_5</td>
-          <td className="schedules-table__td">cell5_5</td>
-          <td className="schedules-table__td">cell6_5</td>
-        </tr>
+        ))}
       </tbody>
     </Container>
   );

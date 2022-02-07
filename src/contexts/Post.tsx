@@ -14,10 +14,13 @@ export function PostProvider({
   const [schedulePost, setSchedulePost] = useState([] as IScheduleData[]);
 
   const addSchedule = useCallback((data: IScheduleData) => {
-    setSchedulePost((prevState) => ([
-      ...prevState,
-      data
-    ]));
+    setSchedulePost((prevState) => {
+      const newState = [...prevState];
+
+      newState.unshift(data);
+
+      return newState;
+    });
   }, []);
 
   const contextValue = useMemo(() => ({

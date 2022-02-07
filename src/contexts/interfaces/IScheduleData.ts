@@ -4,5 +4,5 @@ export interface IScheduleData {
   media?: string;
   text: string;
   publication_date: string;
-  status_key: string;
+  status_key: number;
 }
