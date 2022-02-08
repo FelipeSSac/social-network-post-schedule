@@ -30,7 +30,7 @@ export const Container = styled.div`
   .post-text__textarea{
     width: 100%;
     height: 9.125rem;
-    padding: 0.5rem 0.8rem;
+    padding: 0.5rem 2.2rem 0.5rem 0.8rem;
 
     border: 1px solid var(--secondary-gray);
     border-radius: 0.2rem;

@@ -1,0 +1,15 @@
+{
+  "testEnvironment": "jsdom",
+  "setupFilesAfterEnv": [
+    "<rootDir>/setupTests.ts"
+  ],
+  "collectCoverageFrom": [
+    "<rootDir>/src/**/*.tsx",
+    "<rootDir>/src/**/utils/*.ts"
+  ],
+  "moduleNameMapper": {
+    "\\.(css|less)$": "identity-obj-proxy",
+    "\\.png": "<rootDir>/jest/__mocks__/fileMock.js",
+    "\\.svg": "<rootDir>/jest/__mocks__/svgMock.js"
+  }
+}

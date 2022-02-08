@@ -1,3 +1,5 @@
+import { useEffect, useState } from 'react';
+
 // @ts-expect-error
 import Instagram from '../../../assets/images/postPreview/pp-instagram.svg?component';
 // @ts-expect-error
@@ -13,6 +15,12 @@ import { Container } from './styles';
 export default function InstagramPreview({
   formData,
 }: IInstagramPreviewProps) {
+  const [url, setUrl] = useState<string>();
+
+  useEffect(() => {
+    setUrl(formData?.mediaUrl || formData?.media as string);
+  }, [formData]);
+
   return (
     <Container>
       <div className="instagram-preview__header">
@@ -23,11 +31,13 @@ export default function InstagramPreview({
           Anselmo Carlos
         </h1>
       </div>
+      {url && (
       <img
-        src={formData?.mediaUrl}
-        alt={formData?.media?.name}
+        src={url}
+        alt="Instagram Preview"
         className="instagram-preview__image"
       />
+      )}
       <div className="instagram-preview__actions">
         <Like className="instagram-preview__like" />
         <Comment className="instagram-preview__comment" />

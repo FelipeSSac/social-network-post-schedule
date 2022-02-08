@@ -1,7 +1,7 @@
 import { add, format } from 'date-fns';
 import Br from 'date-fns/locale/pt-BR';
 
-export function getPtBrDate(value: string) {
+export function ensurePtBrDate(value: string) {
   const wrongDate = new Date(value);
   const date = add(wrongDate, { days: 1 });
 

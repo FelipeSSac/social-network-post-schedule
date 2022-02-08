@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import { toast } from 'react-toastify';
+import { toast } from 'react-hot-toast';
+import { v4 as uuid } from 'uuid';
 
 import { PostPreviewForecast } from '../../molecules/PostPreviewForecast';
 
@@ -43,8 +44,11 @@ export default function PostPreview({
               return null;
             }
 
+            const key = uuid();
+
             return (
             <PostPreviewForecast
+              key={key}
               socialNetwork={socialNetwork?.name as IPostPreviewItemsKeys}
               formData={formData}
             />
