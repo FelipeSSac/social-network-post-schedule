@@ -1,4 +1,4 @@
-import DefaultUser from '../../../assets/images/header/header-user.png';
+import DefaultUser from '../../../assets/images/header/Header-user.png';
 
 import { IUserBoxProps } from './interfaces/IUserBoxProps';
 import { Container } from './styles';

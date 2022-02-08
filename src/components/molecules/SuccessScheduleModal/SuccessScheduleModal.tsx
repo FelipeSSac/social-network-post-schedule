@@ -2,7 +2,7 @@ import { forwardRef } from 'react';
 import { Button } from '../../atoms/Button';
 
 // @ts-expect-error
-import Emoji from '../../../assets/images/success/success-emoji.svg?component';
+import Emoji from '../../../assets/images/success/Success-emoji.svg?component';
 
 import { ISuccessScheduleModalProps } from './interfaces/ISuccessScheduleModalProps';
 import { Container } from './styles';

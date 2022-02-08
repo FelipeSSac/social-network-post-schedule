@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
-import CalendarIcon from '../../../assets/images/date/date-calendar.svg';
-import ClockIcon from '../../../assets/images/date/date-clock.svg';
+import CalendarIcon from '../../../assets/images/date/Date-calendar.svg';
+import ClockIcon from '../../../assets/images/date/Date-clock.svg';
 
 export const Container = styled.div`
   width: 100%;

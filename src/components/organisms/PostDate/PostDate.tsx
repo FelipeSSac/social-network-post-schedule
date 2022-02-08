@@ -21,12 +21,14 @@ export default function PostDate({
         className="post-date__date"
         name="publication_day"
         onChange={onChange}
+        data-testid="date-input"
       />
       <input
         type="time"
         className="post-date__time"
         name="publication_time"
         onChange={onChange}
+        data-testid="time-input"
       />
     </Container>
   );

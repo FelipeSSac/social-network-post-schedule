@@ -1,15 +1,15 @@
 // @ts-expect-error
-import Instagram from '../../../../assets/images/socialNetwork/sn-instagram.svg?component';
+import Instagram from '../../../../assets/images/socialNetwork/Sn-instagram.svg?component';
 // @ts-expect-error
-import LinkedIn from '../../../../assets/images/socialNetwork/sn-linkedin.svg?component';
+import LinkedIn from '../../../../assets/images/socialNetwork/Sn-linkedin.svg?component';
 // @ts-expect-error
-import Youtube from '../../../../assets/images/socialNetwork/sn-youtube.svg?component';
+import Youtube from '../../../../assets/images/socialNetwork/Sn-youtube.svg?component';
 // @ts-expect-error
-import Pinterest from '../../../../assets/images/socialNetwork/sn-pinterest.svg?component';
+import Pinterest from '../../../../assets/images/socialNetwork/Sn-pinterest.svg?component';
 // @ts-expect-error
-import Twitter from '../../../../assets/images/socialNetwork/sn-twitter.svg?component';
+import Twitter from '../../../../assets/images/socialNetwork/Sn-twitter.svg?component';
 // @ts-expect-error
-import Facebook from '../../../../assets/images/socialNetwork/sn-facebook.svg?component';
+import Facebook from '../../../../assets/images/socialNetwork/Sn-facebook.svg?component';
 
 import { IButtonTypes } from '../interfaces/IButtonTypes';
 
