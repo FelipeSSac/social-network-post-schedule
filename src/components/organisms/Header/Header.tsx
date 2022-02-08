@@ -1,6 +1,6 @@
 import { UserBox } from '../../molecules/UserBox';
 
-import Logo from '../../../assets/images/header/header-logo.png';
+import Logo from '../../../assets/images/header/Header-logo.png';
 
 import { Container } from './styles';
 

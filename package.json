@@ -4,6 +4,7 @@
   "scripts": {
     "dev": "vite",
     "test": "jest",
+    "test:coverage": "jest --coverage",
     "build": "tsc && vite build",
     "preview": "vite preview"
   },

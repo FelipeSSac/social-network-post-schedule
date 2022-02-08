@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router';
 import { Button } from '../../components/atoms/Button';
 
 // @ts-expect-error
-import EmptyIconRaw from '../../assets/images/home/home-empty.svg?component';
+import EmptyIconRaw from '../../assets/images/home/Home-empty.svg?component';
 
 import { Container } from './styles';
 

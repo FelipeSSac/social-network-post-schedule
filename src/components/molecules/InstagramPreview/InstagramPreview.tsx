@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react';
 
 // @ts-expect-error
-import Instagram from '../../../assets/images/postPreview/pp-instagram.svg?component';
+import Instagram from '../../../assets/images/postPreview/Pp-instagram.svg?component';
 // @ts-expect-error
-import Like from '../../../assets/images/postPreview/pp-like-ig.svg?component';
+import Like from '../../../assets/images/postPreview/Pp-like-ig.svg?component';
 // @ts-expect-error
-import Comment from '../../../assets/images/postPreview/pp-comment-ig.svg?component';
+import Comment from '../../../assets/images/postPreview/Pp-comment-ig.svg?component';
 // @ts-expect-error
-import Share from '../../../assets/images/postPreview/pp-share-ig.svg?component';
+import Share from '../../../assets/images/postPreview/Pp-share-ig.svg?component';
 
 import { IInstagramPreviewProps } from './interfaces/IInstagramPreviewProps';
 import { Container } from './styles';

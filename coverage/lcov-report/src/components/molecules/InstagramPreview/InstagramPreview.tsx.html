@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/4</span>
+                <span class='fraction'>4/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">75% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/4</span>
+                <span class='fraction'>3/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/2</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/4</span>
+                <span class='fraction'>4/4</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -129,13 +129,13 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -164,27 +164,27 @@
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { useEffect, useState } from 'react';
 &nbsp;
 // @ts-expect-error
-import Instagram from '../../../assets/images/postPreview/pp-instagram.svg?component';
+import Instagram from '../../../assets/images/postPreview/Pp-instagram.svg?component';
 // @ts-expect-error
-import Like from '../../../assets/images/postPreview/pp-like-ig.svg?component';
+import Like from '../../../assets/images/postPreview/Pp-like-ig.svg?component';
 // @ts-expect-error
-import Comment from '../../../assets/images/postPreview/pp-comment-ig.svg?component';
+import Comment from '../../../assets/images/postPreview/Pp-comment-ig.svg?component';
 // @ts-expect-error
-import Share from '../../../assets/images/postPreview/pp-share-ig.svg?component';
+import Share from '../../../assets/images/postPreview/Pp-share-ig.svg?component';
 &nbsp;
 import { IInstagramPreviewProps } from './interfaces/IInstagramPreviewProps';
 import { Container } from './styles';
 &nbsp;
-export default function <span class="fstat-no" title="function not covered" >InstagramPreview(</span>{
+export default function InstagramPreview({
   formData,
 }: IInstagramPreviewProps) {
-  const [url, setUrl] = <span class="cstat-no" title="statement not covered" >useState&lt;string&gt;();</span>
+  const [url, setUrl] = useState&lt;string&gt;();
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  useEffect(<span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    setUrl(formData?.mediaUrl || formData?.media as string);</span>
+  useEffect(() =&gt; {
+    setUrl(formData?.mediaUrl || formData?.media as string);
   }, [formData]);
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  return (</span>
+  return (
     &lt;Container&gt;
       &lt;div className="instagram-preview__header"&gt;
         &lt;div className="instagram-preview__header__icon-container"&gt;
@@ -195,7 +195,7 @@ export default function <span class="fstat-no" title="function not covered" >Ins
         &lt;/h1&gt;
       &lt;/div&gt;
       {url &amp;&amp; (
-      &lt;img
+<span class="branch-1 cbranch-no" title="branch not covered" >      &lt;img</span>
         src={url}
         alt="Instagram Preview"
         className="instagram-preview__image"
@@ -217,7 +217,7 @@ export default function <span class="fstat-no" title="function not covered" >Ins
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at Tue Feb 08 2022 00:06:51 GMT-0300 (Horário Padrão de Brasília)
+                at Tue Feb 08 2022 18:21:36 GMT-0300 (Horário Padrão de Brasília)
             </div>
         <script src="../../../../prettify.js"></script>
         <script>

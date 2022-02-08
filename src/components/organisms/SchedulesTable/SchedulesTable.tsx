@@ -63,8 +63,11 @@ export default function SchedulesTable({
 
   return (
     <Container>
-      <thead className="schedules-table__thead">
-        <tr>
+      <thead
+        className="schedules-table__thead"
+        data-testid="table-head"
+      >
+        <tr data-testid="table-row">
           <th className="schedules-table__th">Redes sociais</th>
           <th className="schedules-table__th">Mídia</th>
           <th className="schedules-table__th">Texto</th>
@@ -73,7 +76,10 @@ export default function SchedulesTable({
           <th className="schedules-table__th schedules-table__th-click" onClick={sortByStatus}>Status</th>
         </tr>
       </thead>
-      <tbody className="schedules-table__tbody">
+      <tbody
+        data-testid="table-body"
+        className="schedules-table__tbody"
+      >
         {schedules?.length > 0 && schedules.map((schedule, index) => (
         <tr className="schedules-table__tr" key={schedule.id}>
           <td className="schedules-table__td">

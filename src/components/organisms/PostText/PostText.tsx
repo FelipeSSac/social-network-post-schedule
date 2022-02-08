@@ -2,7 +2,7 @@ import { ChangeEvent, useRef, useState } from 'react';
 import Picker, { IEmojiData } from 'emoji-picker-react';
 import { useOutside } from '../../../hooks/useOutside';
 
-import Emoji from '../../../assets/images/postText/pt-emoji.png';
+import Emoji from '../../../assets/images/postText/Pt-emoji.png';
 
 import { PickerGroupNames } from './utils/PickerGroupNames';
 import { PickerStyle } from './utils/PickerStyle';
@@ -85,6 +85,7 @@ export default function PostText({
         ref={textareaRef}
         className="post-text__textarea"
         onChange={onChange}
+        data-testid="post-text"
         placeholder="Aqui vai o texto descritivo desse post"
       />
     </Container>

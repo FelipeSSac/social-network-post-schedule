@@ -5,7 +5,7 @@ import { v4 as uuid } from 'uuid';
 
 import { PostPreviewForecast } from '../../molecules/PostPreviewForecast';
 
-import Empty from '../../../assets/images/postPreview/pp-empty.png';
+import Empty from '../../../assets/images/postPreview/Pp-empty.png';
 
 import { IPostPreviewProps } from './interfaces/IPostPreviewProps';
 import { ISocialNetwork } from '../PostSocialNetwork/interfaces/ISocialNetwork';

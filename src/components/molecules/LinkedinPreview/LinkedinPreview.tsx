@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react';
 
 // @ts-expect-error
-import Linkedin from '../../../assets/images/postPreview/pp-linkedin.svg?component';
+import Linkedin from '../../../assets/images/postPreview/Pp-linkedin.svg?component';
 // @ts-expect-error
-import Like from '../../../assets/images/postPreview/pp-like-in.svg?component';
+import Like from '../../../assets/images/postPreview/Pp-like-in.svg?component';
 // @ts-expect-error
-import Comment from '../../../assets/images/postPreview/pp-comment-in.svg?component';
+import Comment from '../../../assets/images/postPreview/Pp-comment-in.svg?component';
 // @ts-expect-error
-import Share from '../../../assets/images/postPreview/pp-share-in.svg?component';
+import Share from '../../../assets/images/postPreview/Pp-share-in.svg?component';
 
 import { ensurePtBrDate } from '../../../utils/ensurePtBrDate';
 

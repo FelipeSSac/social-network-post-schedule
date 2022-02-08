@@ -5,7 +5,13 @@
   ],
   "collectCoverageFrom": [
     "<rootDir>/src/**/*.tsx",
-    "<rootDir>/src/**/utils/*.ts"
+    "<rootDir>/src/**/utils/*.ts",
+    "!<rootDir>/src/main.tsx",
+    "!<rootDir>/src/components/molecules/ModalPortal/**",
+    "!<rootDir>/src/components/templates/**",
+    "!<rootDir>/src/routes/**",
+    "!<rootDir>/src/pages/**",
+    "!<rootDir>/src/hooks/**"
   ],
   "moduleNameMapper": {
     "\\.(css|less)$": "identity-obj-proxy",

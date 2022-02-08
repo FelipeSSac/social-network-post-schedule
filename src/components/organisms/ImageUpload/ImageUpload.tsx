@@ -4,7 +4,7 @@ import {
 
 import { Button } from '../../atoms/Button';
 
-import CloudIcon from '../../../assets/images/imageUpload/iu-cloud.svg';
+import CloudIcon from '../../../assets/images/imageUpload/Iu-cloud.svg';
 
 import { IImageUploadProps } from './interfaces/IImageUploadProps';
 import { Container } from './styles';
@@ -115,6 +115,8 @@ export default function ImageUpload({
         ref={fileInput}
         onChange={handleInputChange}
         className="image-upload__input"
+        data-testid="file-input"
+        id="file-input"
       />
     </Container>
   );
