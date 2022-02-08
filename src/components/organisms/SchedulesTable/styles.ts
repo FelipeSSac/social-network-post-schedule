@@ -35,6 +35,10 @@ export const Container = styled.table`
     }
   }
 
+  .schedules-table__th-click{
+    cursor: pointer;
+  }
+
   .schedules-table__tbody{
     position: relative;
     z-index: 4;

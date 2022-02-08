@@ -9,7 +9,7 @@
     ],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
-        "ecmaFeatures": {
+      "ecmaFeatures": {
             "jsx": true
         },
         "ecmaVersion": "latest",
@@ -18,6 +18,10 @@
     "plugins": [
         "react",
         "@typescript-eslint"
+      ],
+    "ignorePatterns": [
+      "**/*.test.tsx",
+      "**/*.test.ts"
     ],
     "rules": {
       "react/react-in-jsx-scope": "off",
@@ -26,6 +30,7 @@
       "react/jsx-props-no-spreading": "off",
       "react/button-has-type": "off",
       "react/prop-types": "off",
+      "import/no-extraneous-dependencies": "off",
       "import/prefer-default-export": "off",
       "import/extensions": "off",
       "import/no-unresolved": "off",

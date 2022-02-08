@@ -1,3 +1,5 @@
+import { useEffect, useState } from 'react';
+
 // @ts-expect-error
 import Linkedin from '../../../assets/images/postPreview/pp-linkedin.svg?component';
 // @ts-expect-error
@@ -13,8 +15,14 @@ import { ILinkedinPreviewProps } from './interfaces/ILinkedinPreviewProps';
 import { Container } from './styles';
 
 export default function LinkedinPreview({
-  formData,
+  formData
 }: ILinkedinPreviewProps) {
+  const [url, setUrl] = useState<string>();
+
+  useEffect(() => {
+    setUrl(formData?.mediaUrl || formData?.media as string);
+  }, [formData]);
+
   return (
     <Container>
       <div className="linkedin-preview__header">
@@ -26,19 +34,21 @@ export default function LinkedinPreview({
             Anselmo Carlos
           </h1>
           <h2 className="linkedin-preview__header__date">
-            {formData?.publication_day
-              && ensurePtBrDate(formData?.publication_day)}
+            {(formData?.publication_day || formData?.publication_date)
+              && ensurePtBrDate(formData?.publication_day || formData?.publication_date)}
           </h2>
         </div>
       </div>
       <p className="linkedin-preview__text">
         {formData?.text}
       </p>
-      <img
-        src={formData?.mediaUrl}
-        alt={formData?.media?.name}
-        className="linkedin-preview__image"
-      />
+      {url && (
+        <img
+          src={url}
+          alt="Linkedin Preview"
+          className="linkedin-preview__image"
+        />
+      )}
       <h2 className="linkedin-preview__comments">
         5 comentários
       </h2>

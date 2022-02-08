@@ -12,7 +12,6 @@ export const Container = styled.div`
     gap: 0.5rem;
   }
 
-
   .status-label__text{
     display: block;
 

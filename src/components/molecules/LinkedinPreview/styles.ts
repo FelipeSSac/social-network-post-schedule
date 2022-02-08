@@ -3,7 +3,8 @@ import styled from 'styled-components';
 export const Container = styled.article`
   width: 100%;
   flex: none;
-  max-width: 23rem;
+  max-width: 25rem;
+  min-width: 23rem;
   height: fit-content;
   padding: 0.875rem 0 0;
 

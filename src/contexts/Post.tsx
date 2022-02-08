@@ -1,5 +1,5 @@
 import {
-  createContext, useCallback, useMemo, useState
+  createContext, useMemo, useState
 } from 'react';
 
 import { IPostContext } from './interfaces/IPostContext';
@@ -11,17 +11,27 @@ export const PostContext = createContext<IPostContext>({} as IPostContext);
 export function PostProvider({
   children,
 }: IPostProviderProps) {
-  const [schedulePost, setSchedulePost] = useState([] as IScheduleData[]);
+  const [schedulePost, setSchedulePost] = useState(() => {
+    const jsonSchedules = localStorage.getItem('@mLabs: Schedules');
 
-  const addSchedule = useCallback((data: IScheduleData) => {
+    if (jsonSchedules) {
+      return JSON.parse(jsonSchedules) as IScheduleData[];
+    }
+
+    return [] as IScheduleData[];
+  });
+
+  const addSchedule = (data: IScheduleData) => {
     setSchedulePost((prevState) => {
       const newState = [...prevState];
 
       newState.unshift(data);
 
+      localStorage.setItem('@mLabs: Schedules', JSON.stringify(newState));
+
       return newState;
     });
-  }, []);
+  };
 
   const contextValue = useMemo(() => ({
     schedulePost,

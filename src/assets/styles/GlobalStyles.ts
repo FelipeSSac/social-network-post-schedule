@@ -64,8 +64,8 @@ export const GlobalStyles = createGlobalStyle`
       font-size: 55%;
     }
 
-    @media (max-width: 355px) {
-      font-size: 52%;
+    @media (max-width: 375px) {
+      font-size: 45%;
     }
   }
 

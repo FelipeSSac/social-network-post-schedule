@@ -16,7 +16,7 @@ import { Container } from './styles';
 import { IIconTypesKeys } from '../../atoms/SocialNetworkIcon/interfaces/IIconTypes';
 
 export default function SchedulesTable({
-  schedules
+  schedules, previewSchedule, sortByDate, sortByStatus
 }: ISchedulesTableProps) {
   const [statusData, setStatusData] = useState([
   ] as IStatusData[]);
@@ -68,9 +68,9 @@ export default function SchedulesTable({
           <th className="schedules-table__th">Redes sociais</th>
           <th className="schedules-table__th">Mídia</th>
           <th className="schedules-table__th">Texto</th>
-          <th className="schedules-table__th">Data</th>
+          <th className="schedules-table__th schedules-table__th-click" onClick={sortByDate}>Data</th>
           <th className="schedules-table__th">Ações</th>
-          <th className="schedules-table__th">Status</th>
+          <th className="schedules-table__th schedules-table__th-click" onClick={sortByStatus}>Status</th>
         </tr>
       </thead>
       <tbody className="schedules-table__tbody">
@@ -91,11 +91,13 @@ export default function SchedulesTable({
             </div>
           </td>
           <td className="schedules-table__td">
+            {schedule?.media && (
             <img
               src={schedule?.media}
               alt="Post preview"
               className="schedules-table__image"
             />
+            )}
           </td>
           <td className="schedules-table__td">
             <p className="schedules-table__text">
@@ -109,7 +111,11 @@ export default function SchedulesTable({
             </p>
           </td>
           <td className="schedules-table__td">
-            <button type="button" className="schedules-table__preview-button">
+            <button
+              type="button"
+              className="schedules-table__preview-button"
+              onClick={() => previewSchedule(schedule)}
+            >
               Preview
             </button>
           </td>

@@ -16,12 +16,20 @@ export default function AddScheduleNav({
       && formData?.social_network_key?.length > 0
       && disableSubmit
     ) {
+      console.log('false');
+
       setDisableSubmit(false);
 
       return;
     }
 
-    if (!disableSubmit) {
+    if (!disableSubmit && (
+      !formData?.publication_day
+      || !formData?.publication_time
+      || formData?.social_network_key?.length === 0
+    )) {
+      console.log('true');
+
       setDisableSubmit(true);
     }
   };
