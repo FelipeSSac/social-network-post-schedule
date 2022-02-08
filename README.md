@@ -1,6 +1,6 @@
 <h1 align="center">Social Network Post Schedule</h1>
 
-<h1 align="center"><img src="./screenshots/labs.png" /></h1>
+<h1 align="center"><img src="./screenshot/labs.png" /></h1>
 
 ## ✨ Technologies
 
@@ -65,7 +65,7 @@ Project developed using the React library to make it a Single Page Application, 
 
   ## 👷‍♀️ Tests Coverage
 
- <h1 align="center"><img src="./screenshots/coverage.png" /></h1>
+ <h1 align="center"><img src="./screenshot/coverage.png" /></h1>
 
 ## 🚀 How to run
 
